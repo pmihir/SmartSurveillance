@@ -1,0 +1,118 @@
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-light bg-dark" style="height:50px">
+  <a style="color: gray" class="navbar-brand" href="#">
+    <b>Smart Surveillance</b>
+  </a>
+  <!-- <ul class="navbar-nav">
+      <li></li>
+    </ul> -->
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a href="#" class="nav-link" style="color: gray">
+        <i class="fa fa-user" aria-hidden="true"></i> Logout</a>
+    </li>
+  </ul>
+</nav>
+
+
+
+
+
+
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+            <h2>Live Streaming</h2>
+        </div>
+      <iframe width="auto" width="100%" height="100%" [src]='safeURL' ></iframe>
+
+
+      </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+        <div class="card-header">
+            <h2>Appliance Control</h2>
+        </div>
+             <table>
+          <tr >
+            <td class="pb-5 text-dark" ><span class="h2">FAN</span></td>
+            <td class="pb-5" ><span> <button pButton (click)="changeFanButton()" label="{{this.fanButton}}"></button> </span></td>
+          </tr>
+          <tr>
+            <td class="pb-5 text-dark"> <span class="h2">LIGHT</span></td>
+            <td class="pb-5"><span> <button pButton (click)="changeLightButton()" label="{{this.lightButton}}"></button> </span></td>
+          </tr>
+          <tr>
+              <td class="text-dark"> <span class="h2 ">ALARM</span></td>
+              <td><span> <button pButton (click)="changeAlarmButton()" label="{{this.alarmButton}}"></button> </span></td>
+            </tr>
+          <tr>
+
+          </tr>
+        </table>
+            <!-- <iframe height="100%" src="https://www.youtube.com/embed/A3vC1XWOBx8" frameborder="0"></iframe> -->
+            <!-- <video src=""></video> -->
+          </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card " >
+        <div class="card-header">
+            <h2>Object Surviellance</h2>
+        </div>
+
+            <p-chart type="line" [data]="data"></p-chart>
+          </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card" >
+        <div class="card-header">
+            <h2>Object Detection</h2>
+        </div>
+
+        <!-- <button (click)="getImageData()">Get Data</button> -->
+            <!-- <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx"> -->
+          <div class=row>
+              <div class="col-md-6">
+                <img style="height:230px;width:310px" src="../assets/img/imageRecognition.jpg">
+              </div>
+              <div>
+                  <table>
+                  <tr>
+                      <td class="pb-3 h2">Human Detected : &nbsp;&nbsp;&nbsp;</td>
+                      <td *ngIf="this.successData" class="pb-3 h2">{{successData.Human_count}}</td>
+                   </tr>
+                  </table>
+          </div>
+        </div>
+      </div>
+
+     <!-- <div class="col-md-6">
+        <div class="card" >
+        <div class="card-header">
+            <h2>Object Data</h2>
+        </div> -->
+
+        <!-- <button (click)="getImageData()">Get Data</button> -->
+            <!-- <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx"> -->
+          <!--<div class=row>
+              <div class="col-md-6">
+
+
+                <img style="height:230px;width:310px" src="../assets/img/image6.jpg">
+              </div>
+              <div>
+                  <table>
+                  <tr>
+                      <td class="pb-3 h2">Human Detected : &nbsp;&nbsp;&nbsp;</td>
+                      <td *ngIf="this.successData" class="pb-3 h2">{{successData.Human_count}}</td>
+                   </tr>
+                  </table>
+          </div>
+        </div>
+      </div>
+-->
+    </div>
+  </div>
+</div>
